@@ -11,7 +11,7 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://github.com/di2ag/chp_api/blob/master/terms%20of%20service
-  version: "2.0"
+  version: '2.0'
   x-reasoner_standard_version: 1.0
 
 servers:
