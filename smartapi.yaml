@@ -21,6 +21,7 @@ servers:
 tags:
   - name: bayesian
   - name: translator
+  - name: 1.0.0
 paths:
   /predicates:
     get:
