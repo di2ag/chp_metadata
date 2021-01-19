@@ -16,7 +16,7 @@ info:
   x-translator:
     component: KP
     team:
-    - "Service Provider"
+    - "Connections Hypothesis Provider"
 
 servers:
   - url: http://chp.thayer.dartmouth.edu/
