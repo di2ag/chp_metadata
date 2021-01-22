@@ -19,7 +19,7 @@ info:
     - "Connections Hypothesis Provider"
 
 servers:
-  - url: http://chp.thayer.dartmouth.edu/
+  - url: chp.thayer.dartmouth.edu/
     description: Production Server
 
 tags:
