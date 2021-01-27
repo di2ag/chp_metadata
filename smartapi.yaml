@@ -163,7 +163,7 @@ paths:
                       id: "MONDO:0007254"
                 type: object
           description: set of curies currently supported by our service
-      summary: Get a list of versions of our service repositories
+      summary: Get a set of curies currently supported by our service
       tags:
         - "Curies"
       x-accessRestriction: none
