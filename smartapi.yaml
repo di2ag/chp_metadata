@@ -162,7 +162,7 @@ paths:
                     - name: "breast_cancer"
                       id: "MONDO:0007254"
                 type: object
-          description: versions of our service
+          description: set of curies currently supported by our service
       summary: Get a list of versions of our service repositories
       tags:
         - "Curies"
