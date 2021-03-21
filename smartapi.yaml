@@ -7,6 +7,7 @@ info:
     name: Luke Veenhuis
     x-role: responsible developer
     x-id: LukeVeenhuis
+    x-trapi: 1.0.0
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -26,6 +27,7 @@ tags:
   - name: bayesian
   - name: translator
   - name: 1.0.0
+  - name: trapi
 paths:
   /predicates:
     get:
