@@ -48,10 +48,17 @@ paths:
                 example:
                   biolink:Gene:
                     biolink:Disease:
-                      - "biolink:GeneToDiseaseAssociation"
+                      - "biolink:gene_associated_with_condition"
+                    biolink:Drug:
+                      - "biolink:interacts_with"
                   biolink:Drug:
                     biolink:Disease:
-                      - "biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation"
+                      - "biolink:treats"
+                    biolink:Gene:
+                      - "biolink:interacts_with"
+                  biolink:Disease:
+                    biolink:PhenotypicFeature:
+                      - "biolink:has_phenotype"
                 type: object
           description: Predicates by source and target
       summary: Get supported relationships by source and target
