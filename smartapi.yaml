@@ -159,11 +159,7 @@ paths:
         description: A message with question graph.
         required: true
       responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Message'
+        '200':          
           description: A message with knowledge graph and answers.
       summary: Get answers to a question
       tags:

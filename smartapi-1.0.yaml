@@ -145,10 +145,6 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Message'
           description: A message with knowledge graph and answers.
       summary: Get answers to a question
       tags:
