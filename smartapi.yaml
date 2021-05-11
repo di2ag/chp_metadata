@@ -133,8 +133,8 @@ paths:
                           id: "CHP:PredicateProxy",
                           operator: ==,
                           value: ["EFO:0000714"],
-                          unit_id: None,
-                          unit_name: None,
+                          unit_id: null,
+                          unit_name: null,
                           not: False
                           
                         }
@@ -143,8 +143,8 @@ paths:
                           id: "EFO:0000714",
                           operator: ">",
                           value: 887,
-                          unit_id: None,
-                          unit_name: None,
+                          unit_id: null,
+                          unit_name: null,
                           not: False
                         }
                 knowledge_graph:
@@ -153,7 +153,7 @@ paths:
                 results: []
               max_results: 10
               trapi_version: 1.1
-              biolink_version: None
+              biolink_version: null
             schema:
               $ref: '#/components/schemas/Query'
         description: A message with question graph.

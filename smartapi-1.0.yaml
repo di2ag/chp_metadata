@@ -118,8 +118,8 @@ paths:
                           id: "EFO:0000714",
                           operator: ">",
                           value: 926,
-                          unit_id: None,
-                          unit_name: None
+                          unit_id: null,
+                          unit_name: null
                         }
                   nodes:
                     n0:
@@ -138,7 +138,7 @@ paths:
                 results: []
                 max_results: 10
                 trapi_version: 1.0
-                biolink_version: None
+                biolink_version: null
             schema:
               $ref: '#/components/schemas/Query'
         description: A message with question graph.
@@ -505,7 +505,7 @@ components:
           example: [OMIM:603903]
           description: CURIE identifier for this node
           nullable: true
-        categories:
+        categorize:
           type: array
           items:
             $ref: '#/components/schemas/BiolinkEntity'
@@ -601,7 +601,7 @@ components:
           example: Haptoglobin
           description: Formal name of the entity
           nullable: true
-        categories:
+        categorize:
           type: array
           items:
             $ref: '#/components/schemas/BiolinkEntity'
