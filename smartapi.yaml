@@ -111,13 +111,13 @@ paths:
                     n0: 
                       {
                         ids: ["ENSEMBL:ENSG00000158077"],
-                        categorize: ["biolink:Gene"],
+                        categories: ["biolink:Gene"],
                         constraint: []
                       }
                     n1:
                       {
                         ids: ["CHEMBL:CHEMBL92"],
-                        categorize: ["biolink:Drug"],
+                        categories: ["biolink:Drug"],
                         constraint: []
                       }
                   edges:

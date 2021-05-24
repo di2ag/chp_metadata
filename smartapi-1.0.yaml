@@ -501,7 +501,7 @@ components:
           example: [OMIM:603903]
           description: CURIE identifier for this node
           nullable: true
-        categorize:
+        categories:
           type: array
           items:
             $ref: '#/components/schemas/BiolinkEntity'
@@ -597,7 +597,7 @@ components:
           example: Haptoglobin
           description: Formal name of the entity
           nullable: true
-        categorize:
+        categories:
           type: array
           items:
             $ref: '#/components/schemas/BiolinkEntity'
