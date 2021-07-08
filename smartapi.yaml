@@ -237,6 +237,7 @@ paths:
                   - subject: "biolink:Disease"
                     predicate: "biolink:has_phenotype"
                     object: "biolink:PhenotypicFeature"
+      summary: Provide the meta knowledge graph showing available subject-predicate-object types
                    
                     
               
