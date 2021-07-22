@@ -19,6 +19,12 @@ info:
     - "Connections Hypothesis Provider"
   x-trapi:
     version: 1.1.0
+    operations:
+      - bind
+      - fill
+      - complete_results
+      - lookup
+      - overlay
     url: "https://github.com/di2ag/chp_client"
 
 servers:
