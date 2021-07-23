@@ -243,7 +243,8 @@ paths:
                   - subject: "biolink:Disease"
                     predicate: "biolink:has_phenotype"
                     object: "biolink:PhenotypicFeature"
-                   
+    tags:
+      - "Meta Knowledge Graph"               
                     
               
 
