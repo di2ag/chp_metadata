@@ -243,8 +243,9 @@ paths:
                   - subject: "biolink:Disease"
                     predicate: "biolink:has_phenotype"
                     object: "biolink:PhenotypicFeature"
+      summary: Get the meta knowledge graph for CHP
       tags:
-        - "Curies"              
+        - "Meta Knowledge Graph"              
                     
               
 
