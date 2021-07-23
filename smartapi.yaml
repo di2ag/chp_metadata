@@ -245,7 +245,7 @@ paths:
                     object: "biolink:PhenotypicFeature"
       summary: Get the meta knowledge graph for CHP
       tags:
-        - "Meta Knowledge Graph"              
+      - "Meta Knowledge Graph"              
                     
               
 
