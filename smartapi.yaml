@@ -252,7 +252,6 @@ paths:
                   - subject: 'biolink:PhenotypicFeature'
                     object: 'biolink:Disease'
                     predicate: 'biolink:phenotype_of'
-        }
       summary: Get the meta knowledge graph for CHP
       tags:
       - "Meta Knowledge Graph"              
