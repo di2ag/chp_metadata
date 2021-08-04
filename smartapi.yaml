@@ -28,16 +28,16 @@ info:
     url: "https://github.com/di2ag/chp_client"
 
 servers:
-  - url: http://chp.thayer.dartmouth.edu/
+  - url: http://chp.thayer.dartmouth.edu
     description: Pan-Cancer Production Server
 
-  - url: http://breast.chp.thayer.dartmouth.edu/
+  - url: http://breast.chp.thayer.dartmouth.edu
     description: Breast Cancer Production Server
 
-  - url: http://brain.chp.thayer.dartmouth.edu/
+  - url: http://brain.chp.thayer.dartmouth.edu
     description: Brain Cancer Production Server
 
-  - url: http://lung.chp.thayer.dartmouth.edu/
+  - url: http://lung.chp.thayer.dartmouth.edu
     description: Lung Cancer Production Server
 
 tags:
