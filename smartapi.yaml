@@ -42,7 +42,7 @@ servers:
 
 tags:
   - name: bayesian
-  - name: translator
+  - name: translator1
   - name: 1.1.0
   - name: trapi
 paths:
@@ -250,43 +250,7 @@ paths:
 
       summary: Get the meta knowledge graph for CHP
       tags:
-      - "Meta Knowledge Graph"              
-    /predicates:
-    get:
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                additionalProperties:
-                  additionalProperties:
-                    description: Array of predicates
-                    items:
-                      type: string
-                    type: array
-                  description: Target map
-                  type: object
-                description: Source map
-                example:
-                  biolink:Gene:
-                    biolink:Disease:
-                      - "biolink:gene_associated_with_condition"
-                    biolink:Drug:
-                      - "biolink:interacts_with"
-                  biolink:Drug:
-                    biolink:Disease:
-                      - "biolink:treats"
-                    biolink:Gene:
-                      - "biolink:interacts_with"
-                  biolink:Disease:
-                    biolink:PhenotypicFeature:
-                      - "biolink:has_phenotype"
-                type: object
-          description: Predicates by source and target
-      summary: Get supported relationships by source and target
-      tags:
-        - "Predicates"
-      x-accessRestriction: none
+      - "Meta Knowledge Graph"                                         
   /v1.2/versions:
     get:
       responses:
@@ -491,10 +455,7 @@ paths:
 
       summary: Get the meta knowledge graph for CHP
       tags:
-      - "Meta Knowledge Graph"              
-                                      
-              
-
+      - "Meta Knowledge Graph"
 
 components:
   schemas:
