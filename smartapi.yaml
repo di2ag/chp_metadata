@@ -12,13 +12,13 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://github.com/di2ag/chp_api/blob/master/terms%20of%20service
   version: '2.0'
-  x-reasoner_standard_version: 1.1.0
+  x-reasoner_standard_version: 1.2.0
   x-translator:
     component: KP
     team:
     - "Connections Hypothesis Provider"
   x-trapi:
-    version: 1.1.0
+    version: 1.2.0
     operations:
       - bind
       - fill
@@ -42,8 +42,8 @@ servers:
 
 tags:
   - name: bayesian
-  - name: translator1
-  - name: 1.1.0
+  - name: translator
+  - name: 1.2.0
   - name: trapi
 paths:
   /versions:
