@@ -46,42 +46,6 @@ tags:
   - name: 1.1.0
   - name: trapi
 paths:
-  /predicates:
-    get:
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                additionalProperties:
-                  additionalProperties:
-                    description: Array of predicates
-                    items:
-                      type: string
-                    type: array
-                  description: Target map
-                  type: object
-                description: Source map
-                example:
-                  biolink:Gene:
-                    biolink:Disease:
-                      - "biolink:gene_associated_with_condition"
-                    biolink:Drug:
-                      - "biolink:interacts_with"
-                  biolink:Drug:
-                    biolink:Disease:
-                      - "biolink:treats"
-                    biolink:Gene:
-                      - "biolink:interacts_with"
-                  biolink:Disease:
-                    biolink:PhenotypicFeature:
-                      - "biolink:has_phenotype"
-                type: object
-          description: Predicates by source and target
-      summary: Get supported relationships by source and target
-      tags:
-        - "Predicates"
-      x-accessRestriction: none
   /versions:
     get:
       responses:
@@ -287,7 +251,248 @@ paths:
       summary: Get the meta knowledge graph for CHP
       tags:
       - "Meta Knowledge Graph"              
-                    
+    /predicates:
+    get:
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                additionalProperties:
+                  additionalProperties:
+                    description: Array of predicates
+                    items:
+                      type: string
+                    type: array
+                  description: Target map
+                  type: object
+                description: Source map
+                example:
+                  biolink:Gene:
+                    biolink:Disease:
+                      - "biolink:gene_associated_with_condition"
+                    biolink:Drug:
+                      - "biolink:interacts_with"
+                  biolink:Drug:
+                    biolink:Disease:
+                      - "biolink:treats"
+                    biolink:Gene:
+                      - "biolink:interacts_with"
+                  biolink:Disease:
+                    biolink:PhenotypicFeature:
+                      - "biolink:has_phenotype"
+                type: object
+          description: Predicates by source and target
+      summary: Get supported relationships by source and target
+      tags:
+        - "Predicates"
+      x-accessRestriction: none
+  /versions:
+    get:
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                additionalProperties:
+                  additionalProperties:
+                    description: object of service versions
+                    items:
+                      type: string
+                    type: object
+                example:
+                  chp: "1.1.0"
+                  chp_client: "0.2.1"
+                  chp_data: "0.1.1"
+                  pybkb: "1.1.0"
+                type: object
+          description: versions of our service
+      summary: Get a list of versions of our service repositories
+      tags:
+        - "Versions"
+  /v1.2/query:
+    get:
+      requestBody:
+        content:
+          application/json:
+            example:
+              message:
+                query_graph:
+                  nodes:
+                    n0: 
+                      {
+                        ids: ["ENSEMBL:ENSG00000158077"],
+                        categories: ["biolink:Gene"],
+                        constraint: []
+                      }
+                    n1:
+                      {
+                        ids: ["CHEMBL:CHEMBL92"],
+                        categories: ["biolink:Drug"],
+                        constraint: []
+                      }
+                  edges:
+                    e0:
+                      predicates: 
+                        - "biolink:interacts_with"
+                      relation: None
+                      subject: n0
+                      object: n1
+                      constraints:
+                        - {
+                          name: predicate_proxy,
+                          id: "CHP:PredicateProxy",
+                          operator: ==,
+                          value: ["EFO:0000714"],
+                          unit_id: null,
+                          unit_name: null,
+                          not: False
+                          
+                        }
+                        - {
+                          name: "EFO:0000714",
+                          id: "EFO:0000714",
+                          operator: ">",
+                          value: 887,
+                          unit_id: null,
+                          unit_name: null,
+                          not: False
+                        }
+                knowledge_graph:
+                  nodes: {}
+                  edges: {}
+                results: []
+              max_results: 10
+              trapi_version: 1.1
+              biolink_version: null
+            schema:
+              $ref: '#/components/schemas/Query'
+        description: A message with question graph.
+        required: true
+      responses:
+        '200':          
+          description: A message with knowledge graph and answers.
+      summary: Get answers to a question
+      tags:
+      - "Query"
+      x-accessRestriction: none
+      externalDocs:
+        url: https://github.com/di2ag/chp_client
+  /v1.2/curies:
+    get:
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                additionalProperties:
+                  additionalProperties:
+                    description: object of supported curies
+                    items:
+                      type: string
+                    type: object
+                example:
+                  biolink:Gene:
+                    - name: "CLIP2"
+                      id: "ENSEMBL:ENSG00000106665"
+                  biolink:Drug:
+                    - name: "ZOLADEX"
+                      id: "CHEMBL:CHEMBL1201247"
+                  biolink:PhenotypicFeature:
+                    - name: "survival_time"
+                      id: "EFO:0000714"
+                  biolink:Disease:
+                    - name: "breast_cancer"
+                      id: "MONDO:0007254"
+                type: object
+          description: set of curies currently supported by our service
+      summary: Get a set of curies currently supported by our service
+      tags:
+        - "Curies"
+      x-accessRestriction: none
+      externalDocs:
+        url: https://github.com/di2ag/chp_client
+  /v1.2/meta_knowledge_graph:
+    get:
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                nodes: 
+                  biolink:Gene:
+                    id_prefixes:
+                      - ENSEMBL
+                      - NCBIGene
+                      - HGNC
+                      - OMIM
+                      - UMLS
+                  biolink:Drug:
+                    id_prefixes:
+                      - CHEMBL.COMPOUND
+                      - PUBCHEM.COMPOUND
+                      - CHEBI
+                      - MESH
+                      - DrugCentral
+                      - GTOPDB
+                      - HMDB
+                      - KEGG.COMPOUND
+                  biolink:ChemicalSubstance:
+                    id_prefixes:
+                      - CHEMBL.CCOMPOUND
+                  biolink:SmallMolecule:
+                    id_prefixes:
+                      - CHEMBL.CCOMPOUND
+                  biolink:Disease:
+                    id_prefixes:
+                      - MONDO
+                      - DOID
+                      - UMLS
+                      - NCIT
+                  biolink:Phenotypic:
+                    id_prefixes:
+                      - EFO
+                edges:
+                  - subject: 'biolink:Gene'
+                    object: 'biolink:Disease'
+                    predicate: 'biolink:gene_associated_with_condition'
+
+                  - subject: 'biolink:Gene'
+                    object: 'biolink:Drug'
+                    predicate: 'biolink:interacts_with'
+
+                  - subject: 'biolink:Drug'
+                    object: 'biolink:Gene'
+                    predicate: 'biolink:interacts_with'
+
+                  - subject: 'biolink:Drug'
+                    object: 'biolink:Disease'
+                    predicate: 'biolink:treats'
+
+                  - subject: 'biolink:Disease'
+                    object: 'biolink:PhenotypicFeature'
+                    predicate: 'biolink:has_phenotype'
+
+                  - subject: 'biolink:Gene'
+                    object: 'biolink:Gene'
+                    predicate: 'biolink:genetically_interacts_with'
+
+                  - subject: 'biolink:Disease'
+                    object: 'biolink:Gene'
+                    predicate: 'biolink:condition_associated_with_gene'
+
+                  - subject: 'biolink:Disease'
+                    object: 'biolink:Drug'
+                    predicate: 'biolink:treated_by'
+
+                  - subject: 'biolink:PhenotypicFeature'
+                    object: 'biolink:Disease'
+                    predicate: 'biolink:phenotype_of'
+
+      summary: Get the meta knowledge graph for CHP
+      tags:
+      - "Meta Knowledge Graph"              
+                                      
               
 
 
