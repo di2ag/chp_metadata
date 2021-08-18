@@ -287,7 +287,7 @@ paths:
       tags:
         - "Predicates"
       x-accessRestriction: none
-  /versions:
+  /v1.2/versions:
     get:
       responses:
         '200':
