@@ -293,7 +293,7 @@ paths:
                   - subject: biolink:SmallMolecule
                     object: biolink:Disease
                     predicate: biolink:associated_with_real_world_evidence
-}
+
                   
       summary: Get the meta knowledge graph for CHP
       tags:
