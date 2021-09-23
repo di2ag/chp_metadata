@@ -184,18 +184,11 @@ paths:
                       - ENSEMBL
                       - NCBIGene
                       - HGNC
-                      - OMIM
-                      - UMLS
                   biolink:Drug:
                     id_prefixes:
                       - CHEMBL.COMPOUND
                       - PUBCHEM.COMPOUND
                       - CHEBI
-                      - MESH
-                      - DrugCentral
-                      - GTOPDB
-                      - HMDB
-                      - KEGG.COMPOUND
                   biolink:ChemicalSubstance:
                     id_prefix:
                       - CHEMBL.COMPOUND
