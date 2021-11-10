@@ -17,6 +17,7 @@ info:
     component: KP
     team:
     - "Connections Hypothesis Provider"
+    infores: "infores:connections-hypothesis"
   x-trapi:
     version: 1.2.0
     operations:
@@ -30,15 +31,13 @@ info:
 servers:
   - url: http://chp.thayer.dartmouth.edu
     description: Pan-Cancer Production Server
-
-  - url: http://breast.chp.thayer.dartmouth.edu
-    description: Breast Cancer Production Server
-
-  - url: http://brain.chp.thayer.dartmouth.edu
-    description: Brain Cancer Production Server
-
-  - url: http://lung.chp.thayer.dartmouth.edu
-    description: Lung Cancer Production Server
+    x-maturity: production
+  - url: http://chp-dev.thayer.dartmouth.edu
+    description: Pan-Cancer Production Server
+    x-maturity: staging
+  - url: https://chp-api.ci.transltr.io
+    description: Pan-Cancer Production Server
+    x-maturity: dev
 
 tags:
   - name: bayesian
@@ -298,6 +297,9 @@ paths:
                   - subject: biolink:Gene
                     object: biolink:SmallMolecule
                     predicate: biolink:associated_with_real_world_evidence
+                  - subject: biolink:Gene
+                    object: biolink:Pathway
+                    predicate: biolink:participates_in
 
                   
       summary: Get the meta knowledge graph for CHP
