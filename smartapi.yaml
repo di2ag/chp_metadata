@@ -58,13 +58,11 @@ paths:
                       ids:
                       categories:
                       - biolink:Gene
-                      constraints: []
                     n1:
                       ids:
                       - ENSEMBL:ENSG00000184368
                       categories:
                       - biolink:Gene
-                      constraints: []
                   edges:
                     e0:
                       predicates:
