@@ -45,29 +45,6 @@ tags:
   - name: 1.2.0
   - name: trapi
 paths:               
-  /versions:
-    get:
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                additionalProperties:
-                  additionalProperties:
-                    description: object of service versions
-                    items:
-                      type: string
-                    type: object
-                example:
-                  chp: "1.1.0"
-                  chp_client: "0.2.1"
-                  chp_data: "0.1.1"
-                  pybkb: "1.1.0"
-                type: object
-          description: versions of our service
-      summary: Get a list of versions of our service repositories
-      tags:
-        - "Versions"
   /query:
     get:
       requestBody:
@@ -77,52 +54,25 @@ paths:
               message:
                 query_graph:
                   nodes:
-                    n0: 
-                      {
-                        ids: ["ENSEMBL:ENSG00000158077"],
-                        categories: ["biolink:Gene"],
-                        constraint: []
-                      }
+                    n0:
+                      ids:
+                      categories:
+                      - biolink:Gene
+                      constraints: []
                     n1:
-                      {
-                        ids: ["CHEMBL:CHEMBL92"],
-                        categories: ["biolink:Drug"],
-                        constraint: []
-                      }
+                      ids:
+                      - ENSEMBL:ENSG00000184368
+                      categories:
+                      - biolink:Gene
+                      constraints: []
                   edges:
                     e0:
-                      predicates: 
-                        - "biolink:interacts_with"
-                      relation: None
+                      predicates:
+                      - biolink:genetically_interacts_with
+                      relation:
                       subject: n0
                       object: n1
-                      constraints:
-                        - {
-                          name: predicate_proxy,
-                          id: "CHP:PredicateProxy",
-                          operator: ==,
-                          value: ["EFO:0000714"],
-                          unit_id: null,
-                          unit_name: null,
-                          not: False
-                          
-                        }
-                        - {
-                          name: "EFO:0000714",
-                          id: "EFO:0000714",
-                          operator: ">",
-                          value: 887,
-                          unit_id: null,
-                          unit_name: null,
-                          not: False
-                        }
-                knowledge_graph:
-                  nodes: {}
-                  edges: {}
-                results: []
-              max_results: 10
-              trapi_version: 1.1
-              biolink_version: null
+                      constraints: []
             schema:
               $ref: '#/components/schemas/Query'
         description: A message with question graph.
@@ -174,6 +124,7 @@ paths:
     get:
       responses:
         '200':
+          description: Knowledge-map representation of this TRAPI web service. The meta knowledge graph is composed of the union of most specific categories and predicates for each node and edge.
           content:
             application/json:
               example:
@@ -299,9 +250,7 @@ paths:
                     predicate: biolink:associated_with_real_world_evidence
                   - subject: biolink:Gene
                     object: biolink:Pathway
-                    predicate: biolink:participates_in
-
-                  
+                    predicate: biolink:participates_in   
       summary: Get the meta knowledge graph for CHP
       tags:
       - "Meta Knowledge Graph"
