@@ -46,7 +46,7 @@ tags:
   - name: trapi
 paths:               
   /query:
-    get:
+    post:
       requestBody:
         content:
           application/json:
