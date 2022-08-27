@@ -30,13 +30,13 @@ info:
 
 servers:
   - url: https://chp-api.transltr.io/
-    description: Pan-Cancer Production Server
+    description: Production Server
     x-maturity: production
   - url: https://chp-api.test.transltr.io/
-    description: Pan-Cancer Production Server
+    description: Staging Server
     x-maturity: staging
   - url: https://chp-api.ci.transltr.io/
-    description: Pan-Cancer Production Server
+    description: CI Server
     x-maturity: development
 
 tags:
