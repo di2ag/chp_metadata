@@ -29,15 +29,15 @@ info:
     url: "https://github.com/di2ag/chp_client"
 
 servers:
-  - url: http://chp.thayer.dartmouth.edu
+  - url: https://chp-api.transltr.io/
     description: Pan-Cancer Production Server
     x-maturity: production
-  - url: http://chp-dev.thayer.dartmouth.edu
+  - url: https://chp-api.test.transltr.io/
     description: Pan-Cancer Production Server
     x-maturity: staging
-  - url: https://chp-api.ci.transltr.io
+  - url: https://chp-api.ci.transltr.io/
     description: Pan-Cancer Production Server
-    x-maturity: dev
+    x-maturity: development
 
 tags:
   - name: bayesian
