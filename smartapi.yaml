@@ -34,10 +34,10 @@ servers:
     x-maturity: production
   - url: https://chp-api.test.transltr.io/
     description: Staging Server
-    x-maturity: staging
+    x-maturity: testing
   - url: https://chp-api.ci.transltr.io/
     description: CI Server
-    x-maturity: development
+    x-maturity: staging
 
 tags:
   - name: bayesian
