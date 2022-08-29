@@ -29,7 +29,7 @@ info:
     url: "https://github.com/di2ag/chp_api"
 
 servers:
-  - url: http://chp.thayer.dartmouth.edu/
+  - url: https://chp-api.transltr.io/
     description: Production Server
     x-maturity: production
   - url: https://chp-api.test.transltr.io/
@@ -37,7 +37,7 @@ servers:
     x-maturity: staging
   - url: https://chp-api.ci.transltr.io/
     description: CI Server
-    x-maturity: production
+    x-maturity: development
 
 tags:
   - name: bayesian
