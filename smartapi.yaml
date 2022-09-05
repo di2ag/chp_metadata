@@ -29,13 +29,13 @@ info:
     url: "https://github.com/di2ag/chp_api"
 
 servers:
-  - url: https://chp-api.transltr.io/
+  - url: https://chp-api.transltr.io
     description: Production Server
     x-maturity: production
-  - url: https://chp-api.test.transltr.io/
+  - url: https://chp-api.test.transltr.io
     description: Staging Server
     x-maturity: testing
-  - url: https://chp-api.ci.transltr.io/
+  - url: https://chp-api.ci.transltr.io
     description: CI Server
     x-maturity: staging
 
