@@ -38,6 +38,9 @@ servers:
   - url: https://chp-api.ci.transltr.io
     description: CI Server
     x-maturity: staging
+  - url: http://chp.thayer.dartmouth.edu
+    description: Development Environment
+    x-maturity: development
 
 tags:
   - name: bayesian
