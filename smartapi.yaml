@@ -28,11 +28,6 @@ info:
       - overlay
     url: "https://github.com/di2ag/chp_api"
 
-servers:
-  - url: https://chp-api.transltr.io
-    description: Production Server
-    x-maturity: production
-
 tags:
   - name: bayesian
   - name: translator
