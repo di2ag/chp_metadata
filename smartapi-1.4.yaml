@@ -407,7 +407,7 @@ components:
             Graph Edges and Result Analyses. These are referenced elsewhere by
             the dictionary key.
           additionalProperties:
-            $ref: '#components/schemas/AuxiliaryGraph'
+            $ref: '#/components/schemas/AuxiliaryGraph'
       additionalProperties: false
     LogEntry:
       description: >-
