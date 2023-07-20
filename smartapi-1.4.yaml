@@ -21,11 +21,7 @@ info:
   x-trapi:
     version: 1.4.0
     operations:
-      - bind
-      - fill
-      - complete_results
       - lookup
-      - overlay
     url: "https://github.com/di2ag/chp_api"
 
 servers:
