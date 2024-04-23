@@ -28,9 +28,6 @@ servers:
   - url: https://chp-api.transltr.io
     description: Production Server
     x-maturity: production
-  - url: https://chp.thayer.dartmouth.edu
-    description: Development Environment
-    x-maturity: development
   - url: https://chp-api.ci.transltr.io
     description: CI Server
     x-maturity: staging
