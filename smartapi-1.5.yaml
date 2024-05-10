@@ -28,6 +28,9 @@ servers:
   - url: https://chp.thayer.dartmouth.edu
     description: Development Environment
     x-maturity: development
+  - url: https://chp-api.ci.transltr.io
+    description: CI Server
+    x-maturity: staging
 
 tags:
   - name: translator
