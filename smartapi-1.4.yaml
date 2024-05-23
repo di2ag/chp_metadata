@@ -28,9 +28,6 @@ servers:
   - url: https://chp-api.transltr.io
     description: Production Server
     x-maturity: production
-  - url: https://chp-api.test.transltr.io
-    description: Testing Server
-    x-maturity: testing
 
 tags:
   - name: bayesian
