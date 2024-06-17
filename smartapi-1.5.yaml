@@ -25,6 +25,9 @@ info:
     url: "https://github.com/di2ag/chp_api"
 
 servers:
+  - url: https://chp-api.transltr.io
+    description: Production Server
+    x-maturity: production
   - url: https://chp.thayer.dartmouth.edu
     description: Development Environment
     x-maturity: development
